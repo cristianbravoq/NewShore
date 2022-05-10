@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialExampleModule } from 'src/material.module';
+import { AngularMaterialModules } from 'src/material.module';
 
 import { HomeComponent } from './home.component';
 import { SearchModule } from 'src/app/shareds/search/search.module';
@@ -16,7 +16,7 @@ import { SearchModule } from 'src/app/shareds/search/search.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialExampleModule,
+    AngularMaterialModules,
     ReactiveFormsModule,
     HttpClientModule,
     SearchModule

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { provideAuth,getAuth,  } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialExampleModule } from 'src/material.module';
+import { AngularMaterialModules } from 'src/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
-    MaterialExampleModule,
+    AngularMaterialModules,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

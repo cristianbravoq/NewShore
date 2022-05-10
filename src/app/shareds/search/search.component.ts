@@ -9,7 +9,8 @@ import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { 
+  constructor(
+  ) {
     this.inputOrigin.valueChanges.pipe(tap(res => this.origin.emit(res))).subscribe();
   }
 
@@ -30,7 +31,7 @@ export class SearchComponent implements OnInit {
         debounceTime(500),
         distinctUntilChanged(),
         filter((search: string) => search !== ''),
-        tap((search: string) => this.destination.emit(search))
+        tap((search: string) => this.destination.emit(search)),
       )
       .subscribe()
 

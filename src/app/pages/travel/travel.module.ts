@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TravelRoutingModule } from './travel-routing.module';
 import { AngularMaterialModules } from 'src/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SearchComponent } from './search.component';
 
-// import { SearchComponent } from './search.component';
+import { TravelComponent } from './travel.component';
 
 @NgModule({
   declarations: [
-    SearchComponent,
+    TravelComponent
   ],
   imports: [
     CommonModule,
+    TravelRoutingModule,
     AngularMaterialModules,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    SearchComponent
+    TravelComponent
   ]
 })
-export class SearchModule { }
+export class TravelModule { }

@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 
-export class RecruitingApi {
+export class RecruitingApiService {
 
     private _url = 'https://recruiting-api.newshore.es/api/flights/2';
 
