@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { RecruitingApiService } from '../services/recruiting-api.service'
@@ -42,16 +42,13 @@ export class TravelComponent implements OnInit {
   ngOnInit() {
 
     this.Rutes.selectedRute$.subscribe( data => { this.selectedRute = data })
-
     console.log('Inputs', this.selectedRute);
 
   }
 
   rutas() {
-
-    
     let auxBoolWhile = false;
-    this.auxScale.splice(0, 10);
+    this.auxScale.splice(0, 100);
     this.coin = null;
     this.aux_coin = '';
 
@@ -117,8 +114,6 @@ export class TravelComponent implements OnInit {
     this.auxAPI.splice(0, this.auxAPI.length);
     this.vacio = true;
     return this.auxScale, this.vacio;
-
-
   }
 
   totalCoin() {

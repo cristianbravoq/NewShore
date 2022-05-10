@@ -1,4 +1,3 @@
-<button (click)="rutas()">Button</button>
 
 <section id="gtco-counter" class="">
 
@@ -6,39 +5,49 @@
         <div class="section-content">
 
             <div class="text-center">
-
+              <button (click)="rutas()" type="button" class="btn btn-success m-4">Buscar ruta de vuelo</button>
                     <div class="alert alert-success" role="alert">
-                        <ng-container *ngIf="this.auxScale.length === 0 ; else TemplateVacio">
-                          <p>Unable to calculate the route</p>
-                        </ng-container>
-                        <ng-template #TemplateVacio>
-                            <table class="table table-hover">
-                                <thead>
+                      <ng-container *ngIf="this.vacio === false ; else travelTemplate">
+                        <div class="row text-center">
+                            <p>Enter the city of origin and the city of destination to calculate the route, then press send.</p>
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            You have not yet performed a search
+                        </div>
+                    </ng-container>
+                    <ng-template #travelTemplate>
+                      <ng-container *ngIf="this.auxScale.length === 0 ; else TemplateVacio">
+                        <p>Unable to calculate the route</p>
+                      </ng-container>
+                      <ng-template #TemplateVacio>
+                          <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Origin</th>
+                                  <th scope="col">Destination</th>
+                                  <th scope="col">Price</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor="let item of this.auxScale">
+                                <tr>
+                                  <th scope="row">{{item.departureStation}}</th>
+                                  <td>{{item.arrivalStation}}</td>
+                                  <td>USD {{item.price}}</td>
+                                </tr>
+                              </tbody>
+                              <tbody>
                                   <tr>
-                                    <th scope="col">Origin</th>
-                                    <th scope="col">Destination</th>
-                                    <th scope="col">Price</th>
+                                    <td colspan="2">PRICE:
+                                      <button (click)="coinUSD()" type="button" class="btn btn-success">USD</button>
+                                        <button (click)="coinEUR()" type="button" class="btn btn-success">EUR</button>
+                                        <button (click)="coinGBP()" type="button" class="btn btn-success">GBP</button>
+                                      </td>
+                                    <td>{{aux_coin}} {{this.coin}}</td>
                                   </tr>
-                                </thead>
-                                <tbody *ngFor="let item of this.auxScale">
-                                  <tr>
-                                    <th scope="row">{{item.departureStation}}</th>
-                                    <td>{{item.arrivalStation}}</td>
-                                    <td>USD {{item.price}}</td>
-                                  </tr>
-                                </tbody>
-                                <tbody>
-                                    <tr>
-                                      <td colspan="2">PRICE:
-                                        <button (click)="coinUSD()" type="button" class="btn btn-success">USD</button>
-                                          <button (click)="coinEUR()" type="button" class="btn btn-success">EUR</button>
-                                          <button (click)="coinGBP()" type="button" class="btn btn-success">GBP</button>
-                                        </td>
-                                      <td>{{aux_coin}} {{this.coin}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </ng-template>
+                              </tbody>
+                          </table>
+                      </ng-template>
+                    </ng-template>
                     </div>
             </div>
         </div>
