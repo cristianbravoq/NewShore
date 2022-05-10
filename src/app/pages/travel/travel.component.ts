@@ -145,5 +145,9 @@ export class TravelComponent implements OnInit {
     this.coin = this.totalCoin() * 0.93;
   }
 
+  BackHome() {
+    this.router.navigate(['/home']);
+  }
+
 
 }

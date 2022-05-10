@@ -5,11 +5,12 @@
         <div class="section-content">
 
             <div class="text-center">
-              <button (click)="rutas()" type="button" class="btn btn-success m-4">Buscar ruta de vuelo</button>
+              <button (click)="rutas()" type="button" class="btn btn-success mt-4">Find flight route</button>
+              <button (click)="BackHome()" type="button" class="btn btn-danger mt-4">Back home</button>
                     <div class="alert alert-success" role="alert">
                       <ng-container *ngIf="this.vacio === false ; else travelTemplate">
                         <div class="row text-center">
-                            <p>Enter the city of origin and the city of destination to calculate the route, then press send.</p>
+                            <p>Enter the city of origin and the city of destination to calculate the route, then press Find flight route.</p>
                         </div>
                         <div class="alert alert-warning" role="alert">
                             You have not yet performed a search
