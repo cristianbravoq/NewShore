@@ -14,8 +14,8 @@ export class SearchComponent implements OnInit {
   API_REST : any = [];
   dataArr: any = [];
   unicos: any = [];
-  selectedValue!: any;
-  selectedValue2!: any;
+  OriginValue!: any;
+  DestinationValue!: any;
 
 
   constructor(
@@ -44,9 +44,9 @@ export class SearchComponent implements OnInit {
   }
 
   inputOrigin = new FormControl();
-  @Output() origin = new EventEmitter<string>(this.selectedValue);
+  @Output() origin = new EventEmitter<string>(this.OriginValue);
 
-  inputDestination = new FormControl(this.selectedValue2);
+  inputDestination = new FormControl(this.DestinationValue);
   @Output() destination = new EventEmitter<string>();
 
   onChange(): void {
