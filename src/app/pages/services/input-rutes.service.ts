@@ -27,7 +27,6 @@ export class InputRutesService {
 
   setRute(rute:Rutes): void {
     this.rute$.next(rute);
-    // this.rute$.value.arrivalStation.push(rute);
   }
 
 }

@@ -13,26 +13,24 @@ import { ThisReceiver } from '@angular/compiler';
 
 export class HomeComponent implements OnInit {
 
-  RutesInput = {
+  RutesInput: any = {
     departureStation: '',
     arrivalStation: ''
   }
 
-  handleSearch(value: string) {
+  InputSearch(value: string) {
     this.RutesInput.departureStation = value.toUpperCase();
-    this.Rutes.setRute(this.RutesInput)
+    this.Rutes.setRute(this.RutesInput);
   }
 
-  handleSearch2(value: string) {
+  InputSearch2(value: string) {
     this.RutesInput.arrivalStation = value.toUpperCase();
   }
 
   constructor(
     private readonly Rutes: InputRutesService,
     private readonly router: Router
-  ) {
-    // this.Rutes.selectedRute$.subscribe(rute => this.RutesInput)
-   }
+  ) {  }
 
   ngOnInit(): void {
   }

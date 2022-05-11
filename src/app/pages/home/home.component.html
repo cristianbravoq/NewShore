@@ -33,7 +33,7 @@
                                     <p>Enter the city of origin and the city of destination to calculate the route, then press Send.</p>
                                 </div>
                                 <div class="col">
-                                    <app-search (origin)="handleSearch($event)" (destination)="handleSearch2($event)"></app-search>
+                                    <app-search (origin)="InputSearch($event)" (destination)="InputSearch2($event)"></app-search>
                                 </div>
                                 <div class="col align-self-center">
                                     <button (click)="findRoutes()" type="button" class="btn btn-success">Send</button>
@@ -65,7 +65,6 @@
                 <p class="copyright">NewShore-Air</p>
             </footer>
         </div>
-        
     </div>
 </body>
 

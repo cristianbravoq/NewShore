@@ -29,7 +29,6 @@ export class TravelComponent implements OnInit {
       this.API.getInfoAPI().subscribe(
       res => {
         this.API_REST = res; //Guardo la informacion pedida a la API-REST
-        console.log(this.API_REST, 'Peticion en el homecomponent');
       },
       err => console.log(err)
       );
@@ -42,7 +41,6 @@ export class TravelComponent implements OnInit {
   ngOnInit() {
 
     this.Rutes.selectedRute$.subscribe( data => { this.selectedRute = data })
-    console.log('Inputs', this.selectedRute);
 
   }
 
@@ -70,7 +68,6 @@ export class TravelComponent implements OnInit {
 
         //VUELO CON UNA ESCALA
         this.auxAPI.push( this.API_REST.filter( (res: { departureStation: string; }) => res.departureStation === this.selectedRute.departureStation ) );
-        console.log(this.auxAPI);
         this.auxAPI[0].forEach( (destino: { arrivalStation: string , departureStation: string; }) => {
           this.auxAPI[1].forEach( (origen: { arrivalStation: string , departureStation: string; }) => {
             if (destino.departureStation === origen.arrivalStation ) {
@@ -106,8 +103,6 @@ export class TravelComponent implements OnInit {
             } )
           } )
           auxNivelEscala = auxNivelEscala + 1;
-          console.log(auxNivelEscala);
-
         } while (auxNivelEscala < 4);
       }
     }
