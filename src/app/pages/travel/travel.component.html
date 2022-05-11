@@ -5,8 +5,10 @@
         <div class="section-content">
 
             <div class="text-center">
-              <button (click)="rutas()" type="button" class="btn btn-success mt-4">Find flight route</button>
-              <button (click)="BackHome()" type="button" class="btn btn-danger mt-4">Back home</button>
+              <div class="btn-group container my-4" role="group" aria-label="Basic mixed styles example">
+                <button (click)="BackHome()" type="button" class="btn btn-danger">Back home</button>
+                <button (click)="rutas()" type="button" class="btn btn-success">Find flight route</button>
+              </div>
                     <div class="alert alert-success" role="alert">
                       <ng-container *ngIf="this.vacio === false ; else travelTemplate">
                         <div class="row text-center">
